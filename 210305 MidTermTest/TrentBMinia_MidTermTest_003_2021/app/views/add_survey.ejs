@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title><%=title %></title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="pageTitle">
+        <h1>Add Survey</h1>
+    </div>
+
+    <div class="mainBody">
+        <p>
+            Please fill out all the fields below.
+        </p>
+
+        <form action="/add_survey" method="post">
+
+        <p>
+            <label>Survey ID:</label>
+            <input type="text" name="surveyId" required="required" />
+        </p>
+
+        <p>
+            <label>Game Genre:</label>
+            <input type="text" name="gameGenre" required="required" />
+        </p>
+
+        <p>
+            <label>Days Per Year:</label>
+            <input type="number" name="daysPerYear" required="required" />
+        </p>
+
+        <p>
+            <label>Age:</label>
+            <input type="number" name="age" required="required" />
+        </p>
+
+        <p>
+            <input class="button" type="submit" value="Post Survey" required="required" />
+        </p>
+    
+    </form>
+</div>
+
+</body>
+
+</html>

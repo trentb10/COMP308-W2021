@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Student Evaluation - <%= title %></title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="mainBody">
+        <h1>Welcome, <%= username %>!</h1>
+
+        <form id="courseEvaluation" method="post" action="/thankyou">
+            <p>
+                <label for="courseCode">Course Code: </label>
+                <input type="text" maxlength="10" placeholder="ABCD-101" name="courseCode" required="required">
+            </p>
+            
+            <p>
+                <label for="courseName">Name: </label>
+                <input type="text" placeholder="Intro to Alphabetics" name="courseName" required="required">
+            </p>
+
+            <p>
+                <label for="email">Student E-Mail: </label>
+                <input type="email" placeholder="email@dr.ess" name="email" value="<%= email %>" required="required">
+            </p>
+
+            <p>
+                <label for="instructor">Instructor's Name: </label>
+                <input type="text" placeholder="Aibee Seadee" name="instructor" required="required">
+            </p>
+
+            <p>
+                <label for="couseRating">Your Rating (1-5): </label>
+                <input type="number" max="5" min="1" maxlength="1" name="courseRating" required="required">
+            </p>
+
+            <p>
+                <label for="courseComment">Your comment on the course: </label>
+            </p>
+        
+            <p>
+                <textarea name="courseComment" cols="50" rows="7" required="required"></textarea>
+            </p>
+            
+            <input type="submit" value="Submit" name="submitForm">
+        </form>
+
+    </div>
+
+</body>
+</html>

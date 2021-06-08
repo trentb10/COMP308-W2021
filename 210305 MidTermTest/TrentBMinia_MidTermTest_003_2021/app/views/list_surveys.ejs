@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="pageTitle">
+        <h1>List of Surveys</h1>
+    </div>
+
+    <div class="mainBody">
+        <table align="center">
+            <tr>
+                <td>
+                    <div>
+                        <label>Survey ID:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Game Genre:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Days Per Year:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Age:</label>
+                    </div>
+                </td>
+                <td>
+                    <label>Action:</label
+                </td>
+                </tr>
+                <% surveys.forEach(function(survey){ %>
+                    <form method="post" action="/edit_survey">
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text" name="surveyId" value="<%= survey.surveyId %>" />
+                                    <input type="hidden" name="initialSurveyId" value="<%= survey.surveyId %>" />
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="gameGenre" value="<%= survey.gameGenre %>" />
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="daysPerYear" value="<%= survey.daysPerYear %>" /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="age" value="<%= survey.age %>" /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input class="button"type="submit" formaction="/list_surveys?_method=DELETE" value="Delete Survey" />
+                                </div>
+                            </td>
+                        </tr>
+                    </form>
+                    <% })%>
+            </table>
+        <% if(typeof msg != 'undefined') { %> <h2><%= msg %></h2> <% } %>
+
+        <p>
+            <a href="/">&lt;&lt; Back to Index</a>
+        </p>
+    </div>
+</body>
+
+</html>
